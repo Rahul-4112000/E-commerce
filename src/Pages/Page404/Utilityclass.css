@@ -1,0 +1,39 @@
+.d-off {
+    display: none;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.f-bold-large {
+    font-size: large;
+    font-weight: 500;
+}
+
+.f-bold-red {
+    font-weight: 500;
+    color: red;
+}
+
+.no-shrink-grey-text {
+    width: 110px;
+    flex-shrink: 0;
+    font-weight: 500;
+    color: grey;
+    /* border: 1px solid; */
+}
+
+.d-flex-mb-20 {
+    display: flex;
+    margin-block: 20px ;
+}
+
+.b {
+    border: 1px solid ;
+}
+
+
+
+
+  

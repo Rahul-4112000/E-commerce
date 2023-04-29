@@ -1,0 +1,76 @@
+.orderslist-wrapper {
+    width: 95vw;
+    max-width: 1300px;
+    /* margin-block: 50px; */
+    position: relative;
+    translate: -50%;
+    left: 50%;
+    /* border: 1px solid; */
+}
+
+.orderslist-wrapper h2 {
+    margin-block: 20px;
+}
+
+.orderslist {
+    display: flex;
+    padding: 15px;
+    margin-block: 10px;
+    background-color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.orderslist:hover {
+    box-shadow: 0 1px 12px 2px #dbdbdb;
+}
+
+.orderslist .img {
+    width: 100px;
+    min-width: 80px;
+}
+
+.img img {
+    width: 100%;
+    object-fit: contain;
+    aspect-ratio: 1/1;
+}
+
+.orderslist .names {
+    margin: 0 20px;
+    width: 60%;
+    max-width: 700px;
+    min-width: 200px;
+}
+
+.names .order-name {
+    height: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-weight: 500;
+    margin-bottom: 8px;
+    /* border: 1px solid; */
+}
+
+.names .seller-name {
+    font-size: small;
+}
+
+.orderslist .price {
+    width: 10%;
+    max-width: 120px;
+    min-width: 80px;
+}
+
+.orderslist .order-date {
+    margin-bottom: 8px;
+}
+
+.orderslist .date {
+    font-weight: 500;
+}
+
+.date .order-status {
+    font-size: small;
+}

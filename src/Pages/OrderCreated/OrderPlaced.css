@@ -1,0 +1,40 @@
+.purchased-container {
+    width: 90vw;
+    max-width: 850px;
+    height: 87vh;
+    border-radius: 10px;
+    margin: auto;
+    /* border: 1px solid; */
+}
+
+.purchased-wrapper {
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    translate: 0 -50%;
+    top: 50%;
+}
+
+.purchased-wrapper > * {
+    margin-block: 8px;
+}
+
+.purchased-wrapper img {
+    width: 30%;
+    min-width: 115px;
+    max-width: 125px;
+    object-fit: contain;
+    aspect-ratio: 1/1;
+}
+
+.order-home-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-block: 20px;
+}
+
+.order-home-buttons .no-shrink {
+    flex-shrink: 0;
+}

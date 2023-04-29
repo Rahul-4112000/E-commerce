@@ -1,0 +1,20 @@
+ctrl + l                     to select one line
+shift + down/up arrow        to select entire line by line
+alt + down-arrow             move line to below
+ctrl + alt + u/p arrow       multi cursor
+alt + shift + up/down arrow  to copy line
+
+select lines + tab           to indent
+shift + alt + f              to remove indentation
+
+ctrl + \                     two seprate window
+alt + num                    to change tabs
+ctrl + fn + end              go to last point on program
+
+ctrl + p                     search file
+ctrl + r/l-arrow             to jump word
+ctrl + shift + r/l-arrow     select word
+
+
+ctrl + h                     replace-word
+ctrl + d                     replace-next word by word. "first select word"

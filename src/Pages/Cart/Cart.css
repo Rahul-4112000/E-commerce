@@ -1,0 +1,257 @@
+.cart-container {
+    width: 95vw;
+    max-width: 1400px;
+    position: relative;
+    transform: translate(-50%, 0);
+    left: 50%;
+    /* border: 1px solid; */
+}
+
+.cart-container h2 {
+    margin-block: 20px;
+}
+
+.cart-wrapper {
+    display: flex;
+}
+
+.products {
+    width: 70%;
+    margin-right: 25px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    /* border: 1px solid blue; */
+}
+
+.products h5 {
+    color: darkslategray;
+    letter-spacing: 1px;
+}
+
+.product .products-text {
+    margin-bottom: 20px;
+}
+
+.add-items {
+    margin-block: 15px;
+    display: inline-block;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-items:hover {
+    background-color: #d3fdff;
+}
+
+.product-container>hr {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, grey, #ccc);
+}
+
+.product-wrapper {
+    width: 100%;
+    display: flex;
+    padding: 15px;
+    position: relative;
+    /* border: 1px solid yellowgreen; */
+}
+
+.cart-img {
+    width: 100px;
+    min-width: 80px;
+}
+
+.cart-img>img {
+    width: 100%;
+    object-fit: contain;
+    aspect-ratio: 1/1.2;
+}
+
+.cart-content {
+    margin-left: 30px;
+    width: 100%;
+}
+
+.product-name {
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.product-seller {
+    font-size: small;
+    color: grey;
+    margin-block: 10px;
+}
+
+.prices-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-block: 10px;
+}
+
+.prices>span:not(:last-child) {
+    margin-right: 10px;
+}
+
+.product-list-price {
+    font-size: medium;
+    color: grey;
+    font-weight: 500;
+}
+
+.product-selling-price {
+    font-size: large;
+    font-weight: 500;
+}
+
+.product-off {
+    font-size: small;
+    color: red;
+    font-weight: 500;
+}
+
+.qty-selector {
+    position: relative;
+    background-color: white;
+}
+
+.qty-selector>* {
+    cursor: pointer;
+}
+
+.qty-selector>span {
+    position: absolute;
+    translate: 0px -55%;
+    left: 10%;
+    top: 50%;
+    font-weight: 500;
+    color: grey;
+    font-size: small;
+    letter-spacing: 1px;
+}
+
+.qty-selector>select {
+    width: 70px;
+    padding: 5px 0px 5px 35px;
+    border: 1px solid rgba(21, 27, 57, .2);
+    border-radius: 5px;
+    font-weight: 400;
+    font-size: medium;
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    letter-spacing: 0.5px;
+}
+
+.accentcolor-button {
+    border-radius: 5px;
+    height: 30px;
+    padding: 5px 15px;
+    background-color: var(--accent);
+    color: var(--backgroundColor);
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/******************************************************************/
+
+.payment-details-wrapper {
+    width: 30%;
+    min-width: 300px;
+    padding: 20px;
+    height: 290px;
+    border-radius: 10px;
+    background-color: var(--complementary);
+    /* border: 1px solid #bc0303; */
+}
+
+.payment-details-wrapper h5 {
+    letter-spacing: 1px;
+    color: darkslategray;
+}
+
+.payment-details {
+    font-weight: 500;
+    padding: 15px 0;
+}
+
+.payment-details>div:not(:first-child):not(:last-child) {
+    margin: 15px 0;
+}
+
+.free-delivery {
+    color: red;
+}
+
+.total-payble-wrapper {
+    color: var(--accent);
+}
+
+.placeorder-wrapper {
+    align-items: center;
+}
+
+.small-payble-text {
+    font-size: small;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.large-payble-price {
+    font-weight: 600;
+    font-size: large;
+}
+
+.button-hidden {
+    display: none;
+}
+
+.placeorder-button {
+    border-radius: 5px;
+    padding: 10px 18px;
+    background-color: var(--accent);
+    color: var(--backgroundColor);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+}
+
+.disable-placeorder-button {
+    border-radius: 5px;
+    padding: 10px 20px;
+    /* border: 1px solid #999999; */
+    background-color: #cccccc;
+    color: #666666;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    
+}
+
+@media only screen and (max-width:850px) {
+    .cart-wrapper {
+        flex-direction: column;
+    }
+
+    .products {
+        width: 100%;
+    }
+
+    .payment-details-wrapper {
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 50px;
+        max-width: 600px;
+        min-width: 320px;
+        position: relative;
+        translate: -50%;
+        left: 50%;
+    }
+
+}
