@@ -57,7 +57,7 @@ const ImageSlider = () => {
     }, [imgCurrentindex]);
 
     return (
-        <div className="image-slider center-x" >
+        <div className="image-slider" >
             <div className="left arrow" onClick={() => gotoPrevious()}><AiOutlineLeftCircle /></div>
             <div className="right arrow" onClick={() => gotoNext()}><AiOutlineRightCircle /></div>
             {

@@ -259,6 +259,11 @@ li input {
 }
 
 @media only screen and (max-width:850px) {
+
+    nav {
+        height: 70px;
+    }
+
     .navbar-bottom {
         position: fixed;
         bottom: 0px;

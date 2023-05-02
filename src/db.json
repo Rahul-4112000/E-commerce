@@ -35,6 +35,15 @@
       "retypePassword": "parth123",
       "myorders": [],
       "id": 4
+    },
+    {
+      "firstName": "rohit",
+      "lastName": "giri",
+      "email": "rohitgiri2424@gmail.com",
+      "password": "ROHIT123",
+      "retypePassword": "ROHIT123",
+      "myorders": [],
+      "id": 5
     }
   ],
   "Products": [

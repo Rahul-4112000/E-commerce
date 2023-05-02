@@ -1,10 +1,11 @@
 
 .mobile-container {
-    width: 95vw;
-    margin-block:30px;
+    width: 95%;
+    max-width: 1500px;
+    margin-top: 50px;
     border-radius: 10px;
     position: relative;
-    translate: -50%;
+    translate: -50% 0%;
     left: 50%;
     background-color: var(--complementary);
     /* border: 1px solid blue; */
@@ -90,8 +91,13 @@
 }
 
 @media only screen and (max-width:850px) {
+    .mobile-container {
+        margin-bottom: 100px;
+    }
+
     .mobile-wrapper {
         flex-direction: column;
+        padding: 10px;
     }
 
     .mobile-img-wrapper {
@@ -99,11 +105,4 @@
         margin-left: auto;
     }
 }
-
-@media only screen and (max-width:850px) {
-    .mobile-wrapper {
-        padding: 10px;
-    }
-}
-
 
