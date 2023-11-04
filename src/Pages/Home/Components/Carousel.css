@@ -85,21 +85,24 @@
 
 .card .cart-button {
     position: absolute;
-    bottom: -45px;
     padding: 10px;
     width: 150px;
     text-align: center;
-    background: var(--accent);
     border-radius: 21px;
     color: white;
-    opacity: 0;
-    transition: all 500ms;
 }
 
-.cart-button.active {
+.card .cart-button.bg-slategrey {
+    background: var(--accent);
+    opacity: 0;
+    bottom: -45px;
+    transition: all 500ms;
+}
+.card  .bg-slategrey.active {
     bottom: 20px;
     opacity: 0.8;
 }
+
 
 .content .name {
     font-family: "Montserrat", sans-serif;

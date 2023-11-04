@@ -1,49 +1,22 @@
 {
   "user": [
     {
-      "id": 1,
-      "firstName": "Rahul",
-      "lastName": "Lakhvara",
-      "email": "rahullaxar@gmail.com",
-      "password": "rahul123",
-      "retypepassword": "rahul123",
-      "myorders": []
-    },
-    {
-      "firstName": "Jaynti",
-      "lastName": "Joshi",
-      "email": "JayntiJoshi@gmail.com",
-      "password": "jaynti123",
-      "retypePassword": "jaynti123",
-      "id": 2,
-      "myorders": []
-    },
-    {
-      "firstName": "Rohit",
-      "lastName": "giri",
-      "email": "rohitgiri444@gmail.com",
-      "password": "rohit123",
-      "retypePassword": "rohit123",
-      "id": 3,
-      "myorders": []
-    },
-    {
-      "firstName": "Parth",
-      "lastName": "Panchal",
-      "email": "parthpanchal786@gmail.com",
-      "password": "parth123",
-      "retypePassword": "parth123",
+      "firstName": "test",
+      "lastName": "test",
+      "email": "test@gmail.com",
+      "password": "test123",
+      "retypePassword": "test123",
       "myorders": [],
-      "id": 4
+      "id": 1
     },
     {
-      "firstName": "rohit",
-      "lastName": "giri",
-      "email": "rohitgiri2424@gmail.com",
-      "password": "ROHIT123",
-      "retypePassword": "ROHIT123",
+      "firstName": "temp",
+      "lastName": "temp",
+      "email": "temp@gmail.com",
+      "password": "temp123",
+      "retypePassword": "temp123",
       "myorders": [],
-      "id": 5
+      "id": 2
     }
   ],
   "Products": [

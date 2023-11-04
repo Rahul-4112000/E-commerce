@@ -1,12 +1,13 @@
 import './Home.css'
 
-import Category from './Category';
+import Category from '../Home/Components/Category';
 import mobile from '../../Assets/Images/vojtech-bruzek-J82GxqnwKSs-unsplash.jpg'
-import ImageSlider from './ImageSlider';
+import ImageSlider from '../Home/Components/ImageSlider';
+import Carousel from '../Home/Components/Carousel';
 
 import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import Carousel from './Carousel';
+import { STATUSES } from '../../Redux/Slices/productSlice';
 
 function Home() {
 
@@ -62,11 +63,16 @@ function Home() {
     link: "/books"
   }];
 
-  if (Products.length === 0) {
-    return <h1>Loading</h1>
+
+
+  if(Products.length === 0 ) {
+    return <span className="loader"></span>
   }
 
+
+
   return (
+
     <div className='container'>
 
       <ImageSlider />

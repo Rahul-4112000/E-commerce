@@ -3,37 +3,41 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 //HomePage
-import Navbar from './Navbar';
+import Navbar from './Navbar/Navbar';
 
 
 //pages
-import SignIn from '../SignIn/SignIn'
-import Wishlist from '../Wishlist/Wishlist';
-import Cart from '../Cart/Cart';
-import Page404 from '../Page404/Page404';
-import Home from './Home';
-import Checkout from '../Checkout/Checkout';
-import OrderPlaced from '../OrderCreated/OrderPlaced';
-import Myorderslist from '../Orderslist/Myorderslist';     
+import Home from './Pages/Home/Home';
+import SignIn from './Pages/SignIn/SignIn'
+import Wishlist from './Pages/Wishlist/Wishlist';
+import Cart from './Pages/Cart/Cart';
+import Page404 from './Pages/Page404/Page404';
+import Checkout from './Pages/Checkout/Checkout';
+import OrderPlaced from './Pages/OrderCreated/OrderPlaced';
+import Myorderslist from './Pages/Orderslist/Myorderslist';     
 
-import Electronics from '../../Components/pages for category/Electronics';
-import Appliances from '../../Components/pages for category/Appliances';
-import Books from '../../Components/pages for category/Books';
-import Fashion from '../../Components/pages for category/Fashion';
-import Mobiles from '../../Components/pages for category/Mobiles';
-import Toys from '../../Components/pages for category/Toys';
-import DynamicPage from '../../Components/pages for category/DynamicPage';
-import BookPage from '../../Components/pages for category/BookPage';
-import SearchedProducts from '../../Components/pages for category/SearchedProducts';
-import Newarrival from '../../Components/pages for category/Newarrival'
+import Electronics from './Components/pages for category/Electronics';
+import Appliances from './Components/pages for category/Appliances';
+import Books from './Components/pages for category/Books';
+import Fashion from './Components/pages for category/Fashion';
+import Mobiles from './Components/pages for category/Mobiles';
+import Toys from './Components/pages for category/Toys';
+import DynamicPage from './Components/pages for category/DynamicPage';
+import BookPage from './Components/pages for category/BookPage';
+import SearchedProducts from './Components/pages for category/SearchedProducts';
+import Newarrival from './Components/pages for category/Newarrival'
 
-import store from '../../Redux/Store/store';
+import store from './Redux/Store/store';
+
+import SellerHomePage from './Pages/BecomeSeller/Seller Pages/Home/SellerHomePage';
+import SellerNavbar from './Pages/BecomeSeller/Components/SellerNavbar';
 const App = () => {
     
     return (
             <Provider store={store}>
                 <BrowserRouter>
                     <Navbar />
+                    <SellerNavbar/>
                     <Routes>
                         <Route path='/' element={<Home />} />
                         <Route path='/search' element={<SearchedProducts />} />
@@ -52,6 +56,10 @@ const App = () => {
                         <Route path='/mobiles' element={<Mobiles />} />
                         <Route path='/toys' element={<Toys />} />
                         <Route path='/newarrival' element={<Newarrival />} />
+
+                        <Route path='/become-seller' element={<SellerHomePage/>} />
+
+
                         <Route path='/*' element={<Page404 />} />
                     </Routes>
                 </BrowserRouter>

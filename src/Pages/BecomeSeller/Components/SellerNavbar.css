@@ -1,0 +1,125 @@
+.seller-navbar {
+    width: 100%;
+    max-width: 1560px;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    gap: 80px;
+    letter-spacing: 0.5px;
+    margin: auto;
+    padding: 0 24px;
+}
+
+.seller-navbar ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    flex-basis: 550px;
+    justify-content: space-between;
+}
+
+.seller-navbar ul > li {
+    cursor: pointer;
+}
+
+.nav-link {
+    padding: 23px 10px;
+    border-bottom: 4px solid white;
+}
+
+.bottom-border {
+    border-bottom: 4px solid burlywood;
+}
+
+.seller-navbar .logo img {
+    height: auto;
+}
+
+.seller-navbar .reg-log-wrapper {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    font-size: small;
+}
+
+.reg-log-wrapper>div {
+    border: 1px solid;
+    padding: 8px 30px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 500ms all;
+}
+
+.reg-log-wrapper>div:hover {
+    border: 1px solid burlywood;
+    background-color: burlywood;
+    color: white;
+}
+
+@media only screen and (max-width:850px) {
+    .seller-navbar {
+        gap: 0px;
+    }
+
+    .seller-navbar ul li:not(:first-child) {
+        display: none;
+    }
+
+}
+
+@media only screen and (max-width:450px) {
+    .seller-navbar {
+        padding: 0 15px;
+    }
+
+    .seller-navbar .logo img {
+        width: 110px;
+        height: auto;
+    }
+
+    .reg-log-wrapper>div {
+        padding: 7px 12px;
+    }
+
+    .seller-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .seller-container .seller-content {
+        width: fit-content;
+        text-align: center;
+    }
+
+    .seller-content .small-text {
+        margin-bottom: 5px;
+    }
+
+    .seller-content .large-text {
+        margin-bottom: 5px;
+    }
+
+    .seller-content button {
+        margin-bottom: 15px;
+    }
+
+    .seller-container img {
+        width: 100%;
+    }
+
+    /**************/
+
+    .heading {
+        font-size: 20px;
+    }
+
+    /**************/
+
+    .pros-wrapper .pros {
+        min-width: 300px;
+        flex: 0 0 90%;
+    }
+}

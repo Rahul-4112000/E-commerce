@@ -29,7 +29,7 @@ const productSlice = createSlice({
 
     setStatus (state, action) {
         state.status = action.payload;
-    },
+    }
 
   }
 });
@@ -42,6 +42,8 @@ export function fetchProducts() {
         dispatch( setStatus(STATUSES.LOADING) );
 
         try {
+
+            console.log("api running");
 
             const response = await fetch("http://localhost:3000/Products");
     

@@ -4,7 +4,6 @@ import  cartSlice  from '../Slices/cartSlice'
 import wishlistReducer from "../Slices/wishlistSlice";
 import productReducer from '../Slices/productSlice';
 import userDataSlice from "../Slices/userDataSlice";
-import navbarSlice from "../Slices/navbarSlice";
 import searchDataSlice from "../Slices/searchDataSlice";
 
 const store = configureStore({
@@ -18,8 +17,6 @@ const store = configureStore({
         product: productReducer,
 
         userData: userDataSlice,
-
-        navbarOff: navbarSlice,
 
         searchData: searchDataSlice
 

@@ -62,11 +62,44 @@ body {
 }
 
 ::-webkit-scrollbar-track {
- background-color: white;
+  background-color: white;
 }
 
 @media only screen and (max-width:850px) {
   .container {
     margin-bottom: 50px;
+  }
+}
+
+.loader {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #FF3D00;
+  position: relative;
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+}
+
+.loader:before,
+.loader:after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  inset: 0;
+  background: lightslategray;
+  transform: rotate(0deg) translate(30px);
+  animation: rotate 1s ease infinite;
+}
+
+.loader:after {
+  animation-delay: 0.5s
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg) translate(30px)
   }
 }

@@ -11,7 +11,6 @@ const OrderPlaced = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
-    // const { cartitems } = useSelector((state) => state.cart);
     const orderid = useSelector((state)=> state.userData.orderID )
     const { userDetails, status } = useSelector((state)=> state.userData );
 
@@ -26,11 +25,15 @@ const OrderPlaced = () => {
 
         const addOrdersToApi = async () => {
 
+            console.log(userDetails, 'userDetails')
+
             let id = userDetails.id;
 
             dispatch ( addOrderStatus(STATUSES.LOADING))
 
             try {
+
+                console.log(id,'id')
 
                 const response =  await fetch(`http://localhost:3000/user/${id}`,{
 
@@ -44,11 +47,9 @@ const OrderPlaced = () => {
                     body: JSON.stringify(userDetails)
                 });
 
-                const data = await response.json();
+                console.log(response,'response');
 
                 dispatch( addOrderStatus(STATUSES.IDLE));
-
-                console.log("response from server",data);
 
             } catch {
 
@@ -89,7 +90,7 @@ const OrderPlaced = () => {
                 <div>Thank You for Choosing Flipkart</div>
                 <div className='order-home-buttons'>
 
-                    <div className='placeorder-button no-shrink' onClick={() => { refreshPage('/myorderslist') }}>My Orders</div>   {/* i am not able use link due to refreshing*/}
+                    <div className='placeorder-button no-shrink' onClick={() => { refreshPage('/myorderslist') }}>My Orders</div>
 
                     <div className='placeorder-button no-shrink' onClick={() => { refreshPage('/') }}>Shop More</div>
 

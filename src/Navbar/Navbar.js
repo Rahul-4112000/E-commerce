@@ -1,35 +1,38 @@
 import './Navbar.css'
 
-import logo from '../../Assets/Images/onlinelogomaker-042823-1737-5335-2000-transparent.png'
-// import logo from '../../Assets/Images/logo.jpg'
+import logo from '../Assets/Images/onlinelogomaker-042823-1737-5335-2000-transparent.png'
 
 import { AiOutlineHeart, AiOutlineUser } from 'react-icons/ai'
 import { FcSearch } from 'react-icons/fc'
 import { IoBagHandleOutline } from 'react-icons/io5'
-import { RiArrowDownSLine, RiLoginCircleLine, RiLogoutCircleLine } from 'react-icons/ri'
-import { FaSellcast } from 'react-icons/fa'
+import { RiArrowDownSLine, RiLoginCircleLine } from 'react-icons/ri'
 import { GiShoppingCart } from 'react-icons/gi'
 import { BsWallet2 } from 'react-icons/bs'
 
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useRef, useState } from "react";
 
-import { fetchProducts } from '../../Redux/Slices/productSlice';
-import { addtoCart, getAdress } from "../../Redux/Slices/cartSlice";
-import { addtowishlist } from "../../Redux/Slices/wishlistSlice";
-import { addOrders, addUser } from "../../Redux/Slices/userDataSlice";
-import { addSearchData } from "../../Redux/Slices/searchDataSlice";
+import { fetchProducts } from '../Redux/Slices/productSlice';
+import { addtoCart, getAdress } from "../Redux/Slices/cartSlice";
+import { addtowishlist } from "../Redux/Slices/wishlistSlice";
+import { addOrders, addUser } from "../Redux/Slices/userDataSlice";
+import { addSearchData } from "../Redux/Slices/searchDataSlice";
 
 const Navbar = () => {
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const searchContainer = useRef();
+    const location = useLocation();
+
+    const { pathname } = location ;
 
     const cart = useSelector((state) => state.cart.cartitems);
     const wishlist = useSelector((state) => state.wishlist)
-    const { userData, navbarOff } = useSelector((state) => state);
+    const { userData } = useSelector((state) => state);
+
+    const { userDetails } = userData;
 
     const [rotateArrow, setRotateArrow] = useState(false);
     const [isDisplayOn, setDisplayOn] = useState(false);
@@ -38,7 +41,6 @@ const Navbar = () => {
     const [searchlistDisplayon, setsearchlistDisplayon] = useState(false)
     const [navbarStyle, setNavbarStyle] = useState(false)
 
-    const { userDetails } = userData;
 
     let userfound = false;
 
@@ -114,6 +116,19 @@ const Navbar = () => {
 
     }, [searchInput])
 
+    
+    const checkElement = (event) => {
+        if(!searchContainer.current.contains(event.target))
+        stateValueHandler(setsearchlistDisplayon,false);
+    }
+    
+    const changeNavbarStyle = () => {
+        if(window.scrollY >= 50)
+        setNavbarStyle(true)
+        else 
+        setNavbarStyle(false)
+    }
+
     useEffect(() => {
 
         window.addEventListener("scroll",changeNavbarStyle)
@@ -121,19 +136,7 @@ const Navbar = () => {
 
         return () => window.removeEventListener;
     });
-
-    const checkElement = (event) => {
-        if(!searchContainer.current.contains(event.target))
-            stateValueHandler(setsearchlistDisplayon,false);
-    }
-
-    const changeNavbarStyle = () => {
-        if(window.scrollY >= 50)
-            setNavbarStyle(true)
-        else 
-            setNavbarStyle(false)
-    }
-
+    
     const searchHandler = (event) => {
         setSearchInput(event.target.value);
         if(event.target.value === '')
@@ -161,7 +164,10 @@ const Navbar = () => {
     
 
     return (
-        <nav className={`${navbarStyle ? "nav-active" : null }`}>
+
+        pathname !== '/become-seller' &&
+
+        <nav className={ navbarStyle ? "nav-active" :null }>
             <ul className="navigation">
 
                 <li onClick={() => setSearchInput('')} className='logo'>
@@ -169,10 +175,10 @@ const Navbar = () => {
                         <img src={logo} alt='LOGO'></img>
                     </Link>
                 </li>
-                <div className='navbar-list'>
+                <div className={`navbar-list ${ pathname === '/checkout' || pathname === '/placeorder'   ? 'd-off' : null }`}>
                     <div className="search-container" ref={searchContainer}>
 
-                        <li className={`${navbarOff ? "search-d-off" : 'nav-search'}`}>
+                        <li className='nav-search'>
                             <form onSubmit={searchListHandler}>
                                 <input type='text' className="search-field" placeholder='Search for Products Brands and More' value={searchInput} onChange={searchHandler} onFocus={() => { stateValueHandler(setsearchlistDisplayon,true) } } ></input>
                                 <span className='nav-search-icon'><FcSearch /></span>
@@ -205,7 +211,7 @@ const Navbar = () => {
 
                    
 
-                    <div className={`${navbarOff ? "d-off" : "navbar-bottom"}`}>
+                    <div className="navbar-bottom">
 
                         <div className={`${userfound ? "d-off" : "d-flex"}`}>
                             <li>
@@ -244,12 +250,11 @@ const Navbar = () => {
 
                        
                         <li className='seller'>
-                            <Link to="/becomeseller">
+                            <Link to="/become-seller">
                                 <span className='nav-icon'> <BsWallet2 />  </span>
                                 <span className='nav-icon-text'>Become Seller</span>
                             </Link>
                         </li>
-
                        
 
                         <li className='wishlist'>
@@ -277,8 +282,9 @@ const Navbar = () => {
 
                     </div>
                 </div>
-
+                
             </ul>
+            
         </nav>
     );
 }

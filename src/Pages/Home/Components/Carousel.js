@@ -3,7 +3,7 @@ import React, { useRef, useState } from 'react'
 
 import { SlArrowLeft, SlArrowRight } from 'react-icons/sl'
 import { useDispatch } from 'react-redux';
-import { addtoCart } from '../../Redux/Slices/cartSlice';
+import { addtoCart } from '../../../Redux/Slices/cartSlice';
 import { useNavigate } from 'react-router-dom';
 
 function Carousel({ Products }) {
@@ -35,7 +35,6 @@ function Carousel({ Products }) {
   return (
     
     <>
-    
       <div onClick={gotoPreviouseSlide} className={`coursel-arrow left`}><SlArrowLeft /></div>
       <div onClick={gotoNextSlide} className='coursel-arrow right'><SlArrowRight /></div>
 
@@ -43,19 +42,21 @@ function Carousel({ Products }) {
         {
           Products.map((item, index) => {
 
+            const { url, name, listPrice, sellingPrice } = item ;
+
             return (
 
               <div className='carousel' key={index} ref={carsouel} >
 
                 <div className='card' onMouseEnter={() => booleanValueHandler(index, setMouseEnter)} onMouseLeave={() => booleanValueHandler('', setMouseEnter)}>
-                  <img src={item.url} alt="appliance" onClick={() => navigate('/dynamicPage', { state: item } )}></img>
-                  <div className={`cart-button ${index === isMouseEnter && "active"}`} onClick={() => { cartHandler(item) } }>ADD TO CART</div>
+                  <img src={url} alt="appliance" onClick={() => navigate('/dynamicPage', { state: item } )}></img>
+                  <div className={`cart-button bg-slategrey ${index === isMouseEnter && "active"}`} onClick={() => { cartHandler(item) } }>ADD TO CART</div>
                 </div>
 
                 <div className='content'>
-                  <div className='name'>{item.name}</div>
-                  <span className='list-price'><s>&#8377;{item.listPrice}</s></span>
-                  <span className='selling-price'>&#8377;{item.sellingPrice}</span>
+                  <div className='name'>{name}</div>
+                  <span className='list-price'><s>&#8377;{listPrice}</s></span>
+                  <span className='selling-price'>&#8377;{sellingPrice}</span>
                 </div>
 
               </div>

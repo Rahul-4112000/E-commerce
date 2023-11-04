@@ -1,9 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-import { navbarToggle } from "../../Redux/Slices/navbarSlice";
-import { addOrderIDdate, getPaymentInfo } from "../../Redux/Slices/cartSlice";
-import { addOrders, addToMyorders, oderID } from "../../Redux/Slices/userDataSlice";
+import {  getPaymentInfo } from "../../Redux/Slices/cartSlice";
+import {  addToMyorders, oderID } from "../../Redux/Slices/userDataSlice";
 
 
 const PaymentDetails = ({ booleanvalue, addressDetailsDisplay }) => {
@@ -33,11 +32,6 @@ const PaymentDetails = ({ booleanvalue, addressDetailsDisplay }) => {
         dispatch( oderID(orderid));
         localStorage.setItem('order-id',JSON.stringify(orderid));
         navigate('/placeorder')
-    }
-
-    const navbarDisplayHandler = (booleanvalue) => {
-        if (path === '/checkout')
-            dispatch(navbarToggle(booleanvalue));
     }
 
     return (
@@ -73,7 +67,7 @@ const PaymentDetails = ({ booleanvalue, addressDetailsDisplay }) => {
                     </div>
                     <div className={` ${displayoff ? 'button-hidden' : null} `}>
                         <Link to={path}>
-                            <div className='placeorder-button' onClick={() => { navbarDisplayHandler(true) }}>PROCEED</div> {/* this onlclick event not work like onchange */}
+                            <div className='placeorder-button'>PROCEED</div>
                         </Link>
                     </div>
                     <div className={` ${displayoff ? null : 'button-hidden'} `}>

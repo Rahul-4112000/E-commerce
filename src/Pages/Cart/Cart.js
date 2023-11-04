@@ -38,25 +38,19 @@ const Cart = () => {
     useEffect(() => {
         dispatch(changeQuantity([qty, itemName]));
     }, [qty])
-    
+
 
     useEffect(() => {
         if (JSON.parse(localStorage.getItem('user-info')))
             localStorage.setItem("cartItems", JSON.stringify(cartitems));
+        else
+            localStorage.setItem("noUserCartItems", JSON.stringify(cartitems));
     }, [cartitems]);
 
     useEffect(() => {
         if (JSON.parse(localStorage.getItem('user-info')))
             localStorage.setItem("wishList", JSON.stringify(WishlistItems));
-    }, [WishlistItems]);
-
-    useEffect(() => {
-        if (!JSON.parse(localStorage.getItem('user-info')))
-            localStorage.setItem("noUserCartItems", JSON.stringify(cartitems));
-    }, [cartitems]);
-
-    useEffect(() => {
-        if (!JSON.parse(localStorage.getItem('user-info')))
+        else
             localStorage.setItem("noUserWishlist", JSON.stringify(WishlistItems));
     }, [WishlistItems]);
 
